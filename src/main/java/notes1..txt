@@ -1,0 +1,192 @@
+Multitasking
+
+-Perform multiple task at single time
+
+Example - On one operating system work on multiple task ,
+        - we have work on word
+        - excel
+        - vscode
+        - intellije
+
+  - it increase the performance of cpu
+
+  ------archived using two way---------
+
+  - Processed based multitasking(Multiprocessing)
+  -Thread based multitasking(Multithreading)
+
+  --------------MultiProcessing---------
+  -when one system (Operating system) connected with multiple processer (CPU) in order to
+  complete the task.
+
+
+  ------MultiThreading--------------
+
+  -Executing multiple thread at single processor
+
+  For eample - when we watching video ,  at time we have increase or decrease volume then time also increase and other task we can do it
+             - Games playing time
+
+
+      -multithreading is best suitable at programming level
+      -Java provide predefined api for multithreading
+      for ex - Thread , Runnable, Thread group , concurrency , Thread pool
+
+
+   ------------------------process VS thread---------------------
+
+                      process                                    |                  Thread
+
+       -A program which is an executing state                       -It is subpart of process
+       -precess is heavy weight                                     - light weight
+       -Context switching (switching  cpu task or processer)        - context switching takes less time.
+       one task to another task continuesly
+       - context switching ,It takes more time
+
+       -For  Inter process communcication it takes more time         - for inter thread communication it takes less time
+
+       -Each process has diffrent adress space.                       - thread share same adress space
+
+       - Process are not depend on each other                         - thread are depend on each other
+
+       - Process does not require synchronization                     - Thread may bbe require synchronization
+
+---------------------------------------------------------------------------------------------------------------------------------
+two way to create thread
+1)Thread(Class)
+2)Runnable(interface)
+-Thread is predefined class , that inside multiple constructor and method is present
+-Thread is inside java.lang package
+---------------Thread method ------------
+| Method          | Purpose                      |
+| --------------- | ---------------------------- |
+| `start()`       | Starts new thread            |
+| `run()`         | Thread execution code        |
+| `sleep()`       | Pause thread                 |
+| `join()`        | Wait for another thread      |
+| `yield()`       | Give chance to other threads |
+| `setPriority()` | Set thread priority          |
+| `getPriority()` | Get thread priority          |
+| `isAlive()`     | Check if thread is running   |
+| `interrupt()`   | Interrupt thread             |
+  getName()
+  setName()
+
+
+---------how to create thred---------
+-extend the thread class
+-override run method
+-craete  an object of class
+-start the thread
+---------------------------------
+class Test extends Thread{
+
+public void run(){
+
+//task of thread
+
+}
+public static void main(String args[]){
+
+Test t = new Test();
+t.start();
+
+
+}
+
+}
+
+-----------Life cycle  of thread------------               jvm allocate processer                  task is comppleted
+- new born thread/created thread ----------------> Runnable-------------------> running--------------------------------------------->dead
+
+
+                                                          non-runnable states
+                                                          sleep(),wait(),suspend()
+
+     ------------------------------------------------------------------------------
+
+     ---------Runable interface--------
+
+     public interface Runnable{
+
+     //Only one method
+     //run();
+
+     }
+
+     -----------------creation of runnable interface-------------------------
+-impliments runnable interface with any class
+-ovverride run method
+-ctreate a object of class
+-then again create object of Thread class
+-and pass reference inside thread constructor
+-then call start method
+
+----------which way is best to create thread----
+-implimating runnable interface
+
+-----------------how to create multiple thraed--------
+-performing single task from single thread
+syntax-
+
+class Test extends Thread{
+public void run(){
+sout("run method")
+}
+psvm(){
+Test t = new Test();
+t.start();
+}
+}
+
+
+-performing single task from multiple thread
+syntax-
+
+class Test extends Thread{
+public void run(){
+sout("run method") //single task
+}
+psvm(){
+Test t = new Test();
+t.start(); //first thread
+
+Test t2 = new Test();
+t2.start(); // secound thread
+
+//total 3 thread is creataed , in main method  , jvm internally created one thread
+}
+}
+
+----------------------------------------------------
+-performing multiple task from single thread
+
+-in java can not be allowed
+-Beacuse one vlc can not be play simultaneously video , music , other task
+----------------------------------------------------
+
+-performing multiple task from multiple thread
+
+class Thread1 extends Thread{
+public void run(){
+sop("task 1")
+}
+}
+class Thread2 extends Thread{
+public void run(){
+sop("task 2")
+}
+}
+class Main(){
+psvm(){
+Thread1 t1 = new Thread1();
+t1.start();
+
+Thread2 t2 = new Thread2();
+t2.start();
+
+//All thread executive simultaneously
+}
+}
+
+
