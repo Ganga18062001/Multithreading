@@ -12,5 +12,8 @@ public class SingleTaskWithMultipleThread {
 
         A b = new A();
         b.start();
+
+        A c = new A();
+        c.start();
     }
 }

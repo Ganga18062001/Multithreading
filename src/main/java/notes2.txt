@@ -1,0 +1,57 @@
+-------Thread class constructor--------
+
+public class Thread implements Runnable{
+
+Thread();
+Thread(Runnable target)          //Simple constr is 4
+Thread(String name)
+Thread(Runnable target,String name)
+
+Thread(ThreadGroup tg,Runnable target)
+Thread(ThreadGroup tg , String name)
+Thread(ThreadGroup tg ,Runnable target, String name)
+Thread(ThreadGroup tg ,Runnable target, String name,long staticSize)
+ //ThreadGroup constr is 4
+
+
+}
+
+-----------methods------------
+
+//Basic method
+-run()
+-start() //start thread  synchronized method
+-currentThread() //static mathod //Thread reference provide
+-isAlive()   //return boolean ,check thread is dead or not
+
+//Naming method
+-getName()  //
+-setName(String name)  //
+
+//Daemonstret method
+-isDaemon(boolean b)   //it create daemon thread ,it takes boolean parameter , if true , it create daemon thread
+
+//priority based method
+-getPriority()
+-setPriority(int p)
+
+//preventing thread
+-sleep()  //static native method
+-yield()  //static native method
+-join()
+-suspend()  //deprecated method
+-resume()   //deprecated method
+-stop()     //deprecated method
+-destroy()  //deprecated method
+
+-intrupt() ,isIntrupted(),interupted()  //thrread intruption method
+
+------------------------------------------------
+For Inter thread communication method
+-------------------------------
+-this three method are present inside object class method
+
+-wait()
+-notify()
+-notifyAll()
+
