@@ -1,0 +1,49 @@
+----Thread priority--------
+-JVM provides the priority to each thread and according to these
+priority jvm allocates the processor.
+
+- If priority is same , jvm will be decide internally.
+-priority are represent in the form of integer value which
+range is from 1-10.
+=> 1 = MIN_Priority
+=> 5 = NORM_Priority
+=> 10 = MAX_Priority
+
+-below are not priority
+=> 0 , <1 , >10
+- MINIMUM_Priority
+- LOW_Priority
+-MINIMUM_Priority
+-HIGH_Priority
+
+-above all are not priority
+---methods of priority----
+-public final void setPriority(int value)
+-public final int getPriority()
+
+syntax -
+        class Test extends Thread{
+        public void run(){
+          sop("child thread");
+          sop(Thread.currentThread().getPriority())
+        }
+        psvm(){
+
+                  sop(Thread.currentThread().getPriority())
+//If jvm by default set priority 5 of main mathod then test
+thread also set 5 priority
+
+        Test t = new Test();
+        //set priority thna all thread priority is 10
+        t.setPriority(10)
+        t.start();
+
+        }
+        }
+
+        //priority are inherited from parent thread
+        //By default main thread prority is 5
+        //if priority is not in bitween 1 to 10 then
+        it will thrown runtime expection(IlligalArgumentExpection)
+        //priority depend on the platform , window does not
+        support priority.

@@ -21,7 +21,7 @@ Thread(ThreadGroup tg ,Runnable target, String name,long staticSize)
 //Basic method
 -run()
 -start() //start thread  synchronized method
--currentThread() //static mathod //Thread reference provide
+-currentThread() //static method //Thread reference provide
 -isAlive()   //return boolean ,check thread is dead or not
 
 //Naming method
@@ -49,7 +49,7 @@ Thread(ThreadGroup tg ,Runnable target, String name,long staticSize)
 ------------------------------------------------
 For Inter thread communication method
 -------------------------------
--this three method are present inside object class method
+-this three method are present inside  object class method
 
 -wait()
 -notify()

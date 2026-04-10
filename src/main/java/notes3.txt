@@ -1,0 +1,97 @@
+----------methods of thread---------
+1)getNamme()
+
+//return current thread name
+
+2)setName()
+
+//set thread name
+
+
+class Test{
+psvm(String[] args){ //main thread
+
+sop("Hello");
+sop(Thread.currentThread().getName()); //main
+  Thread.currentThread().setName("Ganga");
+  sop(Thread.currentThread().getName());  //Ganga
+  sop(10/0) //expection in main thread
+
+
+}
+}
+
+3) isAlive()
+
+return boolean value
+
+//It checks thread is live or dead , if dead it return false
+
+--------------------------------------------------------
+4)Demon Thread
+
+Example - Spelling check , file save => this are run in background
+
+-It run in the background of another thread.
+-It provide service to the thread.
+-Eg.Garbage collector ,finilize , signal dispatchers
+
+-Garbage collector provide service to main mathod  in background if memmory full or outOfMemmory , it delete unused object
+
+Syntax -
+        - public final void setDaemon(boolean b)
+        //If boolean is true ,It convert into daemon thread , boolean is false ,not create daemon thread
+
+        - public final boolean isDaemon()
+        //It check thread is daemon or not
+
+        syntax -
+                class Test extends Thread{
+                void run(){
+                sout("run method")  // this is Daemon thread , run in background of main thread
+                }
+                psvm(){
+                sout("main thread")
+
+                Test test = new Test();
+                test.setDaemon(true);
+                test.start();
+
+
+                }
+                }
+
+                //output
+                main thraed
+                run method
+
+                ----------
+                case 1 - we have create daemon thread before start the thread if we create after the start
+                        method daemon method it give illegalThreadStateException.
+
+                case 2 - we can  not create main thread as daemon thread
+                //syntax
+                 class Test extends Thread{
+                                void run(){
+                                sout("run method")  // this is Daemon thread , run in background of main thread
+                                }
+                                psvm(){
+                                sout("main thread")
+                                Thread.currentThread().setDaemon(true);  //Runtime expection
+
+                                Test test = new Test();
+                                test.currentThread().setDaemon(true);
+                                test.start();
+
+
+                                }
+                                }
+
+//Daemon thread life depend on main thread
+//It inherits properties from its parent thread
+if parent thread is daemon thread , child automatically build daemon thread does not need to create daemon thread
+
+//jvm role in daemon thread
+-jvm does not depend oon daemon thraed , finally jvm will be kill to daemon thread
+- Most of time, daemon thread has  low priority but we can change it  according to our needs
+

@@ -1,0 +1,6 @@
+public class Core {
+    public static void main(String[] args) {
+        int noOfCore = Runtime.getRuntime().availableProcessors();
+        System.out.println(noOfCore);
+    }
+}
