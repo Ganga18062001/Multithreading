@@ -1,0 +1,36 @@
+--------sleep method-------
+
+class Thread{
+1) public static native void sleep(long mili) throws InterruptedExppection
+2)public static void sleep(long mili,int nano) throws Interruptedexpection
+
+}
+// 1 sec = 1000 mili sec
+//1 mili sec = 1000000 nano sec
+
+syntax -
+      class Test extends Thread{
+      for(int i =0;i<=5;i++){
+      try{
+      Thread.sleep(1000); //wait for 1 second Test  thread
+      sop(i);
+      }catch(expection e){
+      sop(e);
+      }
+      }
+      psvm(){
+      Test t = new Test();
+      t.start();
+      }
+      }
+
+      -----------------------------
+      -if value of mili secound is negetive then it thrown IlligalArgumentExpection
+      -if value of nanosecound is not in range 0-999999 then IlligalargumentEcpection
+      -If we use sleep method must be handle expection otherwise it thrown compalation error
+      -If any thread sleeping and any other thread interepted it throws "InterruptedExpection"
+
+
+      ------------------------sleep method used in multithreading--------
+-In this case all thread execute same time
+- but in normal method , thread is one by one execute
