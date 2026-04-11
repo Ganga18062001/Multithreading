@@ -1,0 +1,53 @@
+----------yield method---------
+-which stops the current executing thread and give a chance to other
+thread for execution.
+
+-“I am willing to pause and give a chance to other threads of the same priority to execute.”
+
+-Foe example , two person , first has buying lot of things from dmart,  and secound
+person buy one pen , so casher stop the secound person of billing , firstly do it
+secound person of billing.
+
+--------working----------
+
+-java5 => internally it used sleep();
+-java6  => Tread provide the hint to the thread-scheduler , then it
+           depend on thread-scheduler to accept or ignore the  hint
+
+ ---------Methods-----
+ public static void yield();
+
+ syntax-
+
+ class Test extends Thread{
+
+ public void run(){
+
+      for(int i = 0;i<=5;i++){
+      sop(i);
+      }
+ }
+ psvm(){
+    Test t = new Test();
+    t.start();
+
+    for(int i = 1;i<=5;i++){
+    Thread.yield();
+    sop("main thread")
+    }
+ }
+ }
+
+ //output may be variey depend on thread scheduler
+
+ 🔹 Important Points ⚡
+
+ 1️⃣ yield() pauses the currently executing thread temporarily.
+
+ 2️⃣ The thread goes from Running → Runnable state.
+
+ 3️⃣ It gives other threads of equal priority a chance to execute.
+
+ 4️⃣ It is only a hint to the scheduler, not a guarantee.
+
+ 5️⃣ It is a static method, so it is called like:

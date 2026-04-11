@@ -1,0 +1,65 @@
+------------Join()--------
+
+-If thread want to wait for another thread to complete its task then we
+should use join() method.
+
+-For example
+            - when create licence , firstly we gives medicle test
+            then test drive then officer test
+            - when we gives mediclle test , other task is wait
+            when it completed then test drive join then it completed officer test join
+
+  ----------method------------
+  - public final void join() throws IntereptedException{}
+
+  - public final Synchronized void join(long ms);
+
+  -public final Synchronized void join(long ms,int ns)
+
+  ------syntax----------
+child thread is wait execution for main thread
+
+package joinMethod;
+
+public class Test1 extends Thread{
+
+    static Thread mainThread;
+
+    public void run(){
+
+        try{
+            mainThread.join();
+            for (int i = 0; i < 5; i++) {
+
+                System.out.println(Thread.currentThread().getName()+" "+i);
+                Thread.sleep(1000);
+
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static void main(String[] args)  {
+
+         mainThread = Thread.currentThread();
+
+
+
+        Test1 t1 = new Test1();
+        t1.start();
+
+
+        try{
+            for (int i = 0; i < 5; i++) {
+                System.out.println(Thread.currentThread().getName()+" "+i);
+                Thread.sleep(1000);
+
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+
+
