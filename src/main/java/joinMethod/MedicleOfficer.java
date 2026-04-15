@@ -39,11 +39,11 @@ public class MedicleOfficer extends Thread {
 
         MedicleTest me = new MedicleTest();
         me.start();
-//       me.join();
+       me.join();
 
         TestDrive testDrive = new TestDrive();
         testDrive.start();
-//        testDrive.join();
+        testDrive.join();
 
         MedicleOfficer medicleOfficer = new MedicleOfficer();
         medicleOfficer.start();

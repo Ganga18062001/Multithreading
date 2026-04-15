@@ -3,6 +3,8 @@
 -If thread want to wait for another thread to complete its task then we
 should use join() method.
 
+-join() allows one thread to wait for the completion of another thread.
+
 -For example
             - when create licence , firstly we gives medicle test
             then test drive then officer test

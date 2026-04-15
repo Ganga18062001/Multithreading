@@ -1,0 +1,41 @@
+            sleep()                              yielld()                                                      join()
+
+ -Any thread does not want to perform      - It stop the current executing                      -If a thread want to wait for
+ task at specific time                        thread and provide chance to                       another thread to  complete its task.
+                                            another  thread of same or higher
+                                            priority to execute
+
+
+Example-Timer , ppt, blinking bulb            - Shopping                                         - Licenses department
+
+
+- thread is invoked automatically            - Automatically invoked by                        -Aoutomatically invoked after completion of another thread task
+after provided time period.                     Thread scheduler                                - After completion of time period.
+-If thread is interrupted                                                                       -If thread is interepted.
+
+
+
+
+
+-sleep(long ms)                               - yield();                                         - join();
+-sleep(long ms,int ns)                                                                           - join(long ms);
+                                                                                                 - join(long ms,int ns);
+
+
+- Sleep all method is overloaded.              - not overloaded                                    - yes , join has all method is overloaded
+
+
+
+
+- sleep method is throw the expection           - No expection                                       - InterruptedThreadException
+InterruptedThreadException.
+
+-sleep all method is not final                   - yield all method is not final.                     - join all method is final.
+
+
+-sleep all method is static.                      - yield all method is static                         -join all method is not static method
+
+
+
+-First is native method                            - yield is native method                            - join is not native method
+-Secound is non-native method

@@ -1,0 +1,42 @@
+-----------Interrupted method-----------------
+
+- It is used to interrupt an executing thread.
+
+- interrupt() method will only work when the
+thread is in sleeping or waiting state.
+(sleep() or wait() )
+
+
+- If thread is not sleeping or waiting state then
+calling an interrpt() method then it will perform
+normal method or normal behaviour.
+
+-  when we use interrupt() method it always throws exception
+InterruptedTHreadException.
+
+syntax -
+        public void interupt(){
+
+        }
+
+        -------------syntax-------------
+
+   class Test extends Threads{
+
+   public void run(){
+   try{
+   for(int i = 0;i<=5;i++){
+   sop(i);
+   Thread.sleep();
+   }catch(Expection e){
+   e.printstackstrac();
+   }
+   }
+
+   psvm(){
+   Test t = new Test();
+   t.start();
+   t.interrupt();
+   }
+   }
+   }

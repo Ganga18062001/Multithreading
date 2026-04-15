@@ -14,7 +14,7 @@ public class Main {
 
         A a = new A();
         a.start();
-        Thread.yield();
+//        Thread.yield();
 
 
         for (int i = 1; i <= 5 ; i++) {
