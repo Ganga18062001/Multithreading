@@ -5,6 +5,7 @@ class BookThreaterSeat{
 
    synchronized void bookSeat(int seats){//synchronized method
 
+
         if(totalSeat >= seats){
             System.out.println("Seat successfully book");
              totalSeat = totalSeat - seats;
@@ -23,15 +24,18 @@ public class MovieBookApp extends Thread {
         b.bookSeat(seats);
     }
 
-    public  static void main(String[] args) {
+    public  static void main(String[] args) throws Exception {
         b = new BookThreaterSeat();
 
         MovieBookApp m = new MovieBookApp();
         m.seats = 7;
+
         m.start();
+
 
         MovieBookApp m2 = new MovieBookApp();
         m2.seats = 6;
         m2.start();
+
     }
 }

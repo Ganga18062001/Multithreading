@@ -32,13 +32,26 @@ java.util.concurrent.
 we can achived by 3 waays:-
 1)By "Synchronized method"
 
--Each object has own lock , each object has two are synchronize and non-synchronizes area.
+-Each object has own lock , each object has two area synchronize and non-synchronizes area.
 -Inside synchronizes area they thread accouries lock , thread task completed then lock release and then another thread work same
-
+- when we have work on multiple thread / object , data inconsistency happen that why we have use static synchronization
 
 
 2)By "Synchronized block"
+-when we have partucular block run then we have use synchronizes block , that particular block
+Synchronized(this){
+if(){}
+else{}
+}
+//this is refere to the current object
+
+------------------------------------------------------------------
 3)By "static synchronization"
+
+=> class level synchronozation
+
+
+-----------------------------------------------------------------------------
 
 2)Cooperation(Inter-thread communication in java)
 
