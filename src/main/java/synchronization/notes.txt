@@ -1,0 +1,56 @@
+----------synchronization-------
+=> synchronization means at a time ine thread execute , other thread depend on current execution thread
+
+-If we not use synchronazation ,problem occurs
+1)data Inconsistency
+2)Thread Interference
+
+- If we use synchronization
+1)No data inconsitency problem
+2)No data intereferences
+
+
+- if we use synchronization , it increase the waitiing time period of thread
+and application performance down ,(slowly working)
+
+- In latest version , solve this performance issue ,that why java introduce , java.util.concurrent.
+
+- To overcome synchronization disadvantages , java provides one package
+java.util.concurrent.
+
+
+--------------------types of synchronization ----------------
+1)Process synchronization
+-not present in java multithreading.
+
+2)Thread Synchronization
+
+-It has two type
+
+1)Mutual exclusive
+
+we can achived by 3 waays:-
+1)By "Synchronized method"
+
+-Each object has own lock , each object has two are synchronize and non-synchronizes area.
+-Inside synchronizes area they thread accouries lock , thread task completed then lock release and then another thread work same
+
+
+
+2)By "Synchronized block"
+3)By "static synchronization"
+
+2)Cooperation(Inter-thread communication in java)
+
+we can achived by following method of Object class:
+
+1)wait()
+2)notify()
+3)notifyAll()
+
+
+
+--------
+
+
+

@@ -13,6 +13,26 @@ normal method or normal behaviour.
 
 -  when we use interrupt() method it always throws exception
 InterruptedTHreadException.
+-----------------Three method-----------
+-public void interrupt(){};
+
+----------------------------------------
+
+-public boolean isInterrupted(){};
+
+- - This method is check whether thread is interrupted or not.
+-It return boolean values.
+- It can not clear status .
+-isInterrupted method keep same status the result if method called twice.
+
+
+----------------------------------------------------------
+-public static boolean interrupted();
+
+- This method is check whether thread is interrupted or not.
+- Interrupted method clear the interrupted status from true to false
+-interrupted method change the result if method called twice.
+
 
 syntax -
         public void interupt(){

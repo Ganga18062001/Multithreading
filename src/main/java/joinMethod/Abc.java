@@ -16,7 +16,7 @@ public class Abc extends Thread {
 
     }
     public static void main(String[] args) throws InterruptedException{
-
+//Thread.currentThread().join();
         Abc abc = new Abc();
         abc.start();
         abc.join();
@@ -30,6 +30,12 @@ public class Abc extends Thread {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
+//        Thread.currentThread().join();
+
+        Abc a = new Abc();
+        a.start();
+//        a.start();
 
     }
 }
