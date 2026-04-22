@@ -1,6 +1,5 @@
 package synchronization;
-
-class BookThreaterSeat{
+ class BookThreaterSeat{
     int totalSeat = 10;
 
    synchronized void bookSeat(int seats){//synchronized method
